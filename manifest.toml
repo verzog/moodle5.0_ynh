@@ -1,0 +1,76 @@
+packaging_format = 2
+
+id = "moodle"
+name = "Moodle"
+description.en = "Online learning platform"
+description.fr = "Plateforme d'apprentissage en ligne"
+
+version = "4.5.1~ynh1"
+
+maintainers = []
+
+[upstream]
+license = "GPL-3.0-or-later"
+website = "https://moodle.org/"
+demo = "https://sandbox.moodledemo.net/"
+admindoc = "https://docs.moodle.org/400/en/Main_page"
+code = "https://github.com/moodle/moodle"
+
+[integration]
+yunohost = ">= 11.2.30"
+helpers_version = "2.1"
+architectures = "all"
+multi_instance = true
+
+ldap = true
+sso = true
+
+disk = "50M"
+ram.build = "2000M"
+ram.runtime = "50M"
+
+[install]
+    [install.domain]
+    type = "domain"
+
+    [install.path]
+    type = "path"
+    default = "/moodle"
+
+    [install.init_main_permission]
+    type = "group"
+    default = "visitors"
+
+    [install.admin]
+    type = "user"
+
+    [install.site_name]
+    ask.en = "Choose a name for the site you want to create"
+    ask.fr = "Choisissez un nom pour le site que vous voulez créer"
+    type = "string"
+    default = "Moodle"
+
+[resources]
+
+    [resources.sources]
+
+        [resources.sources.main]
+        url = "https://github.com/moodle/moodle/archive/refs/tags/v4.5.1.tar.gz"
+        sha256 = "9016746a5707f2177385e10a7091d104cb6f371a73f97f967068538c1ad0d890"
+        autoupdate.strategy = "latest_github_tag"
+
+    [resources.system_user]
+
+    [resources.install_dir]
+    group = "www-data:r-x"
+
+    [resources.data_dir]
+
+    [resources.permissions]
+    main.url = "/"
+
+    [resources.apt]
+    packages = "postgresql, php8.2-mbstring, php8.2-curl, php8.2-xmlrpc, php8.2-soap, php8.2-zip, php8.2-gd php8.2-xml, php8.2-intl, php8.2-pgsql, php8.2-ldap"
+
+    [resources.database]
+    type = "postgresql"
