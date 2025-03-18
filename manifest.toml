@@ -55,7 +55,7 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://download.moodle.org/download.php/moodle/moodle-latest.tgz"
+        url = "https://github.com/verzog/moodle50/archive/refs/tags/5.0.0.tar.gz"
         sha256 = "7a530e294d9612c39a3d281ffe5dd13b0fd611bec9952e190985492d7790e07a"
         autoupdate.strategy = "latest_github_tag"
 
