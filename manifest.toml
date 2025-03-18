@@ -56,7 +56,7 @@ ram.runtime = "50M"
 
         [resources.sources.main]
         url = "https://github.com/verzog/moodle50/archive/refs/tags/5.0.0.tar.gz"
-        sha256 = "1ab37ab2ec578590f855a010d52e08182d3c34c5851501fb09adfa68f433c5b1"
+        sha256 = "9016746a5707f2177385e10a7091d104cb6f371a73f97f967068538c1ad0d890"
         autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
